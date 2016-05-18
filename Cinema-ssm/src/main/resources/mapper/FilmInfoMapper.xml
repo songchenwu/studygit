@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yc.cinema.mapper.FilmInfoMapper" >
+	<resultMap type="FilmInfo" id="FilmInfoMap">
+		<id column="filmid" property="filmid"/>
+		<result column="filmname" property="filmname"/>
+		<result column="actor" property="actor"/>
+		<result column="director" property="director"/>
+		<result column="ticketprice" property="ticketprice"/>
+		<association column="typeid" property="type" javaType="FilmType">
+			<id column="typeid" property="typeid" />
+			<result column="typename" property="typename"/>
+		</association>
+	</resultMap> 
+ <select id="getFilmsByBean" parameterType="FilmBean" resultMap="FilmInfoMap">
+ 	select * from filminfo fi join filmtype ft on fi.typeid=ft.typeid
+ 	<where>
+ 		<if test="filmname !=null and filmname != '' ">
+ 			fi.filmname like '%${filmname}%'
+ 		</if>
+ 		<if test="typeid !=null  and typeid != '' ">
+ 			and fi.typeid like #{typeid}
+ 		</if>
+ 		<if test="actor !=null  and actor != '' ">
+ 			and fi.actor like '%${actor}%'
+ 		</if>
+ 		<if test="director !=null  and director != '' ">
+ 			and fi.director like '%${director}%'
+ 		</if> 
+ 		<choose>
+ 			<when test="minprice !=null and maxprice !=null">
+ 				and fi.ticketprice between #{minprice} and #{maxprice}
+ 			</when>
+ 			<when test="minprice !=null">
+ 				and fi.ticketprice > #{minprice}
+ 			</when>
+ 			<when test="maxprice !=null">
+ 				and #{maxprice} > fi.ticketprice
+ 			</when>
+ 		</choose>
+ 	</where>
+ </select>
+ <insert id="addFilmInfo" parameterType="FilmBean" >
+		insert into filmInfo(
+	  		<trim suffixOverrides=",">
+	  		filmid,
+	  	<if test="filmname !=null">
+	  		filmname,
+	  	</if>
+	  	<if test="typeid !=null">
+	  		typeid,
+	  	</if>
+	  	  	actor,director,
+	  	<if test="ticketprice!=null">
+	  		ticketprice
+	  	</if>
+	  	</trim>)
+	  	values(
+	  	<trim suffixOverrides=",">
+	  	seq_filmInfo.nextval,
+	  	<if test="filmname !=null">
+	  		#{filmname},
+	  	</if>
+	  	<if test="typeid !=null">
+	  		#{typeid},
+	  	</if>
+	  		#{actor},#{director},
+	  	<if test="ticketprice !=null">
+	  		#{ticketprice}
+	  	</if>
+	  	</trim>)
+	
+</insert>
+</mapper>

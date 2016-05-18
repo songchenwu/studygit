@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" /> 
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.objectFactory" value="spring" />
+	
+	<!-- 本来是struts-default  因为使用json类型，所以改为json-default -->
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="Type_getTypes" class="com.yc.cinema.web.action.TypeAction02" method="getTypes">
+		<!-- 因为是异步请求，所以不能使页面跳转,使用json类型 
+			<result type="json">-->
+			<!-- 要转换成json字符创的对象名，在action中必须有getXXX()与之对应 
+				<param name="root">filmTypes</param>
+			</result>-->
+		</action>
+		
+		<action name="search" class="com.yc.cinema.web.action.FilmAction" method="search">
+			<result >/page/result.jsp</result>
+		</action>
+		<action name="Film_add" class="com.yc.cinema.web.action.FilmAction" method="add">
+		<result >/index.jsp</result>
+		</action>
+	</package>
+</struts>
