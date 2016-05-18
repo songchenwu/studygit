@@ -19,6 +19,7 @@ public class DBConnTest {
 	@Test
 	public void testConn() {
 		System.out.println("加一句");
+		System.out.println("再加一句");
 		Connection con=null;
 		con=sqlSessionFactory.openSession().getConnection();
 		assertNotNull("数据库连接失败~",con);
