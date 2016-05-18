@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+使用映射接口的方式，命名空间的值必须映射接口的权限定名一致
+ -->
+<mapper namespace="com.yc.fav.mapper.FavoriteMapper">
+	<select id="getAllFavorites" resultType="Favorite">
+		select * from favorite
+	</select>
+	<select id="getFavoritesByTagId"  parameterType="String" resultType="Favorite">
+		select * from Favorite where ftage like #{tname}
+	</select>
+</mapper>

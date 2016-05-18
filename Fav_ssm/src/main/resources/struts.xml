@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.objectFactory" value="spring"/>
+	
+	<package name="default" namespace="/" extends="struts-default">
+	
+		<action name="list" class="com.yc.fav.web.action.FavoriteAction" method="list">
+			<result name="list" >/page/list.jsp</result>
+		</action>
+		
+		<action name="listFav" class="com.yc.fav.web.action.FavoriteAction" method="listFav">
+		</action>
+	</package>
+</struts>
