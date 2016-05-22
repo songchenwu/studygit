@@ -18,7 +18,7 @@ select 3,'oracle',1 from dual ;
 
 insert into FAVORITE
 select 1,'Apache Struts','http://struts.apache.org','java,struts','struts的官方网站' from dual union
-select 2,'Oracle','http://www.oracle.com','','Oracle的官方网站' from dual ;
-
+select 2,'Oracle','http://www.oracle.com','java,oracle','Oracle的官方网站' from dual ;
+delete from FAVORITE;
 select * from FAVORITE;
 select * from TAG;
