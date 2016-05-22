@@ -10,5 +10,7 @@ public interface FavoriteMapper {
 
   List<Favorite> getFavoritesByTagId(String tname);
 
+  void addFavorites(Favorite favorite);
+
 }
 	

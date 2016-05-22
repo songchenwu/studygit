@@ -15,20 +15,20 @@
 		<table class="input_table">
 			<tr>
 				<td>名称:</td>
-				<td><input name="label" size="40" /><br />
+				<td><input name="flabel" size="40" /><br />
 			</tr>
 			<tr>
 				<td>链接:</td>
-				<td><input name="url" size="40" /><br />
+				<td><input name="furl" size="40" /><br />
 			</tr>
 			<tr>
 				<td>Tag:</td>
-				<td><input name="tags" size="40" /><br /> <span
+				<td><input name="ftage" size="40" /><br /> <span
 					style="font-size: 12px; color: green;">可以多个，用“,”隔开</span></td>
 			</tr>
 			<tr>
 				<td>描述:</td>
-				<td><textarea name="desc" rows="4" cols="39"></textarea></td>
+				<td><textarea name="fdesc" rows="4" cols="39"></textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="right">

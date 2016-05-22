@@ -12,4 +12,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getFavoritesByTagId"  parameterType="String" resultType="Favorite">
 		select * from Favorite where ftage like #{tname}
 	</select>
+	
+	<insert id="addFavorites" parameterType="Favorite">
+		insert into Favorite values(seq_fav.nextval,#{flabel},#{furl},#{ftage},#{fdesc})
+	</insert>
 </mapper>

@@ -23,5 +23,15 @@ public class FavoriteServiceImpl implements FavoriteService{
 		tname = "%" + tname + "%";
 		return favoriteMapper.getFavoritesByTagId(tname);
 	}
+
+	@Override
+	public void addFavorite(Favorite favorite) {
+		try {
+			favoriteMapper.addFavorites(favorite);
+		} catch (Exception e) {
+			new RuntimeException("≤Â»Î ß∞‹",e);
+		}
+		
+	}
 	
 }

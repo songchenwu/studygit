@@ -10,9 +10,8 @@ public class Favorite {
 	public Favorite() {
 	}
 
-	public Favorite(int fid, String flabel, String furl, String ftage,
+	public Favorite(String flabel, String furl, String ftage,
 			String fdesc) {
-		this.fid = fid;
 		this.flabel = flabel;
 		this.furl = furl;
 		this.ftage = ftage;

@@ -23,7 +23,7 @@
 					<div class="left_labels">
 						<table class="labels_table">
 							<tr>
-								<td><a href="#" onclick="add();" style="font-weight: bold;">添加书签</a></td>
+								<td><a href="javascript:void(0)" onclick="add();" style="font-weight: bold;">添加书签</a></td>
 							</tr>
 							<tr>
 								<td class="selected_label"><a

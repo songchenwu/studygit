@@ -8,4 +8,6 @@ public interface FavoriteService {
 	List<Favorite> findAllFavorites();
 
 	List<Favorite> findFavoriteByTagId(String tname);
+
+	void addFavorite(Favorite favorite);
 }

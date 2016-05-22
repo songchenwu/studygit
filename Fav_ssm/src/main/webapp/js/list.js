@@ -1,5 +1,6 @@
 function add() {
-	window.open('page/add.html','newwindow',
+	//alert("as");
+	window.open('page/add.jsp','newwindow',
 				'height=300, width=440, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');
 }
 function listFavoritesByTag(tname){

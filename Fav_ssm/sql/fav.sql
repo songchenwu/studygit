@@ -15,7 +15,7 @@ insert into TAG
 select 1,'java',2 from dual union
 select 2,'struts',1 from dual union
 select 3,'oracle',1 from dual ;
-
+ create sequence seq_fav start with 4;
 insert into FAVORITE
 select 1,'Apache Struts','http://struts.apache.org','java,struts','struts的官方网站' from dual union
 select 2,'Oracle','http://www.oracle.com','java,oracle','Oracle的官方网站' from dual ;
