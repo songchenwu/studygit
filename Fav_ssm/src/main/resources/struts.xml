@@ -17,5 +17,9 @@
 		
 		<action name="listFav" class="com.yc.fav.web.action.FavoriteAction" method="listFav">
 		</action>
+		
+		<action name="" class="com.yc.fav.web.action.FavoriteAction" method="">
+			<result name="">/ page/add.jsp</result>
+		</action>
 	</package>
 </struts>

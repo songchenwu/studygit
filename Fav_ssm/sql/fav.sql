@@ -10,6 +10,7 @@ create table favorite(
 	ftage varchar2(1000),
 	fdesc varchar2(2000)
 )
+
 insert into TAG
 select 1,'java',2 from dual union
 select 2,'struts',1 from dual union
