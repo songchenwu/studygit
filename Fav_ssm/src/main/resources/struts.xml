@@ -18,10 +18,11 @@
 		<action name="listFav" class="com.yc.fav.web.action.FavoriteAction" method="listFav">
 		</action>
 		
-		<action name="favorite_add" class="com.yc.fav.web.action.FavoriteAction" method="add">
+		<action name="favorite" class="com.yc.fav.web.action.FavoriteAction" method="add">
 			<result >/page/list.jsp</result>
 			<result name="fail">/page/add.jsp</result>
-			
 		</action>
+		
+		
 	</package>
 </struts>

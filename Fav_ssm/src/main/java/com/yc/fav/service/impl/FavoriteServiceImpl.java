@@ -4,10 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.yc.fav.entity.Favorite;
 import com.yc.fav.mapper.FavoriteMapper;
 import com.yc.fav.service.FavoriteService;
+@Transactional(propagation=Propagation.REQUIRED)
 @Service("favoriteService")
 public class FavoriteServiceImpl implements FavoriteService{
 	@Autowired
@@ -24,7 +27,7 @@ public class FavoriteServiceImpl implements FavoriteService{
 		return favoriteMapper.getFavoritesByTagId(tname);
 	}
 
-	@Override
+	@Override @Transactional(propagation=Propagation.REQUIRED)
 	public void addFavorite(Favorite favorite) {
 		try {
 			favoriteMapper.addFavorites(favorite);

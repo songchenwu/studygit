@@ -9,4 +9,8 @@ public interface TagService {
 
 	List<Tag> findAllTags();
 
+	void addTags(String tname);
+
+	
+
 }

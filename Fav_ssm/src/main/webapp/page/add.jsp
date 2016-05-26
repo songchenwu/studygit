@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<form action="favorite_add" method="post" style="width:440px; margin:0px auto;">
+	<form action="favorite" method="post" style="width:440px; margin:0px auto;">
 		<div class="banner">搜藏</div>
 		<table class="input_table">
 			<tr>

@@ -9,4 +9,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getAllTags" resultType="Tag" >
 		select * from tag
 	</select>
+	
+	<select id="findTags"  parameterType="String" resultType="Tag">
+		select * from tag  where tname=#{tname}
+	</select>
+	<insert id="insertTag" parameterType="string">
+		insert into tag values(seq_tag.nextval,#{tname},1)
+	</insert>
+	<update id="updateCount" parameterType="Tag">
+		update tag set tcount=tcount+1 where tname=#{tname}
+	</update>
 </mapper>

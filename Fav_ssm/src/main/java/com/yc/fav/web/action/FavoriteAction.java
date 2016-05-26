@@ -28,6 +28,7 @@ public class FavoriteAction implements SessionAware,ModelDriven<Favorite>{
 	private Map<String, Object> session;
 	private String tname;
 	private Favorite favorite;
+	private Tag tag;
 	
 	public void setTname(String tname) {
 		this.tname = tname;
@@ -70,13 +71,18 @@ public class FavoriteAction implements SessionAware,ModelDriven<Favorite>{
 	
 	public String  add(){
 		try {
-			favoriteService.addFavorite(favorite);
+			favoriteService.addFavorite(favorite);//Ìí¼Ófavorite
+			String[] tnames=tag.getTname().split(",");
+			for(int i=0;i<tnames.length;i++){
+				tagService.addTags(tnames[i]);//Ìí¼Ótag
+			}
 			return "success";
 		} catch (Exception e) {
 			return "fail";
 		}
-		
 	}
+	
+	
 	
 	@Override
 	public void setSession(Map<String, Object> session) {
